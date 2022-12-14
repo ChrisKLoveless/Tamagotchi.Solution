@@ -52,5 +52,19 @@ namespace Tamagotchi.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsItems_ItemList()
+    {
+      string nameOne = "dog";
+      string nameTwo = "cow";
+      Tama newTama1 = new Tama(nameOne,1,1,1);
+      Tama newTama2 = new Tama(nameTwo,1,1,1);
+      List<Tama> newList = new List<Tama> { newTama1, newTama2 };
+
+      List<Tama> result = Tama.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
