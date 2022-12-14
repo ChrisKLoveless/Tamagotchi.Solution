@@ -16,5 +16,12 @@ namespace Tamagotchi.Models
       Sleep = sleep;
       Happy = Happy;
     }
+
+    public void PassTime()
+    {
+      this.Hunger -= 1;
+      this.Sleep -= 1;
+      this.Happy -= 1;
+    }
   }
 }

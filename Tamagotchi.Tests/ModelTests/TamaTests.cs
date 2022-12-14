@@ -30,5 +30,13 @@ namespace Tamagotchi.Tests
       tama.Name = newName;
       Assert.AreEqual("moose", tama.Name);
     }
+
+    [TestMethod]
+    public void PassTime_SetHunder_Int()
+    {
+      Tama tama = new Tama("cow", 1, 1, 1);
+      tama.PassTime();
+      Assert.AreEqual(0, tama.Hunger);
+    }
   }
 }
