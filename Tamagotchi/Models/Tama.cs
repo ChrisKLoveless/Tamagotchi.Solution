@@ -10,12 +10,14 @@ namespace Tamagotchi.Models
         public int Happy { get; set; }
         private static List<Tama> _team = new List<Tama> { };
 
-        public Tama(string name, int hunger, int sleep, int happy)
+        public static Dictionary<int, string> tamaImages = new Dictionary<int, string> { {1, "https://img.icons8.com/plasticine/2x/pikachu-pokemon.png"}, {2, "https://img.icons8.com/color/2x/jigglypuff.png"}, {3, "https://img.icons8.com/color/2x/psyduck.png"} };
+
+        public Tama(string name)
         {
             Name = name;
-            Hunger = hunger;
-            Sleep = sleep;
-            Happy = Happy;
+            Hunger = 10;
+            Sleep = 10;
+            Happy = 10;
             _team.Add(this);
         }
 

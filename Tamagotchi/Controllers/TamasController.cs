@@ -9,8 +9,28 @@ namespace Tamagotchi.Controllers
     [HttpGet("/tamas")]
     public ActionResult Index()
     {
-      Tama tama = new Tama("cow",1,1,1);
-      return View(tama);
+      List<Tama> allTamas = Tama.GetAll();
+      return View(allTamas);
+    }
+
+    [HttpGet("/tamas/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
+
+    [HttpPost("/tamas")]
+    public ActionResult Create(string name)
+    {
+      Tama myTama = new Tama(name);
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost("/tamas/delete")]
+    public ActionResult Delete()
+    {
+      Tama.ClearAll();
+      return View();
     }
   }
 }

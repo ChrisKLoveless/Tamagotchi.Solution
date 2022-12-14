@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Tamagotchi</title>
-    <link 
-      rel="stylesheet" 
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-      crossorigin="anonymous">
-  </head>
-  <body>
-    @using Tamagotchi.Models;
 
-    <h1>To Do List</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Tamagotchi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
 
-    @* @if (Model.Name == "")
+<body>
+  @using Tamagotchi.Models;
+
+  <h1>Tamagotchi's</h1>
+
+  @if (Model.Count == 0)
+  {
+    <p>There are no items in the list.</p>
+  }
+  <ul>
+    @foreach (Tama tama in Model)
     {
-      <p>There are no items in the list.</p>
-    } *@
-    <ul>
-        <li>@Model.Description</li>
-    </ul>
-    <a href="/items/new">Add a new item.</a>
+      <img src="https://img.icons8.com/plasticine/2x/pikachu-pokemon.png">
+      <li>@tama.Name</li>
+    }
+  </ul>
+  <a href="/tamas/new">Add a new tama.</a>
 
-    <form action="/items/delete" method="post">
-      <button type="submit" name="button">Clear All Items</button>
-    </form>
-  </body>
+  <form action="/tamas/delete" method="post">
+    <button type="submit" name="button">Clear All Items</button>
+  </form>
+</body>
+
 </html>
