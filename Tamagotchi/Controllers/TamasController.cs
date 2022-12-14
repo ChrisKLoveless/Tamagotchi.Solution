@@ -43,7 +43,7 @@ namespace Tamagotchi.Controllers
     public ActionResult Update()
     {
       // Tama.PassTime(); 
-      return View();
+      return RedirectToAction("Show");
     }
   }
 }

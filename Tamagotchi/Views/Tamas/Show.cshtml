@@ -16,13 +16,14 @@
   <img src="https://img.icons8.com/color/2x/meowth.png">
   <h2>@Model.Name</h2>
 
-  <div class="jumbotron">
-    <h3>Hunger: @Model.Hunger</h3> <br>
-    <h3>Sleepiness: @Model.Sleep</h3> <br>
-    <h3>Happiness: @Model.Happy</h3> <br>
-  </div>
-
   <form action="/tamas/update" method="post">
+    <div class="jumbotron">
+      <h3>Hunger: @Model.Hunger</h3> <br>
+      <h3>Sleepiness: @Model.Sleep</h3> <br>
+      <h3>Happiness: @Model.Happy</h3> <br>
+      <h3>Id: @Model.Id</h3>
+    </div>
+
     <button type="submit" name="button" class="btn btn-dark">Pass Time</button>
   </form>
 
