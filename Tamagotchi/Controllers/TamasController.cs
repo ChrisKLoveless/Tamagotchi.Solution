@@ -32,5 +32,18 @@ namespace Tamagotchi.Controllers
       Tama.ClearAll();
       return View();
     }
+    [HttpGet("/tamas/{id}")]
+    public ActionResult Show(int id)
+    {
+      Tama foundTama = Tama.Find(id);
+      return View(foundTama);
+    }
+
+    [HttpPost("/tamas/update")]
+    public ActionResult Update()
+    {
+      // Tama.PassTime(); 
+      return View();
+    }
   }
 }

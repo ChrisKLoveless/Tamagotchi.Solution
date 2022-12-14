@@ -8,11 +8,11 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
-<body>
-  @using Tamagotchi.Models;
-
+<body style="background-color: cyan">
+  @using Tamagotchi.Models
+<div class="jumbotron" style="text-align: center; background-color: yellow;">
   <h1>Tamagotchi's</h1>
-
+</div>
   @if (Model.Count == 0)
   {
     <p>There are no items in the list.</p>
@@ -20,11 +20,14 @@
   <ul>
     @foreach (Tama tama in Model)
     {
-      <img src="https://img.icons8.com/plasticine/2x/pikachu-pokemon.png">
-      <li>@tama.Name</li>
+      int rndNum = tama.RandomNum();
+      string src = Tama.tamaImages[rndNum];
+      <img src="@src">;
+      <li><a href="/tamas/@tama.Id" style="color: indigo;">@tama.Name</a></li>
     }
   </ul>
-  <a href="/tamas/new">Add a new tama.</a>
+
+  <a href='/tamas/new' style="color: indigo;">Add another item</a>
 
   <form action="/tamas/delete" method="post">
     <button type="submit" name="button">Clear All Items</button>

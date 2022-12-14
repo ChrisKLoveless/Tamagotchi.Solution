@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Tamagotchi!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body style="background-color: cyan">
+  <div class="jumbotron" style="text-align: center; background-color: yellow;">
+    <h1>View Tamagotchi Details: </h1>
+  </div>
+
+  <img src="https://img.icons8.com/color/2x/meowth.png">
+  <h2>@Model.Name</h2>
+
+  <div class="jumbotron">
+    <h3>Hunger: @Model.Hunger</h3> <br>
+    <h3>Sleepiness: @Model.Sleep</h3> <br>
+    <h3>Happiness: @Model.Happy</h3> <br>
+  </div>
+
+  <form action="/tamas/update" method="post">
+    <button type="submit" name="button">Pass Time</button>
+  </form>
+
+  <a href='/tamas/new' style="color: indigo;">Add another item</a>
+  <a href='/tamas' style="color: indigo;">View all items</a>
+</body>
+
+</html>
