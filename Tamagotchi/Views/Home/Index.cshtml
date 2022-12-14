@@ -1,17 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tamagotchi</title>
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+      crossorigin="anonymous">
+  </head>
+  <body>
 
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
-		<PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
-		<PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\ToDoList\ToDoList.csproj" />
-	</ItemGroup>
-
-</Project>
+    <h1>Welcome to The Tamagotchi Game!</h1>
+    <a href='/tamas/new'>Add a new Tama</a>
+    <br>
+    <a href='/tamas'>See list of Tama's</a>
+  </body>
+</html>

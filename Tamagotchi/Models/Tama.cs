@@ -2,26 +2,38 @@ using System.Collections.Generic;
 
 namespace Tamagotchi.Models
 {
-  public class Tama
-  {
-    public string Name { get; set; }
-    public int Hunger { get; set; }
-    public int Sleep { get; set; }
-    public int Happy { get; set; }
-
-    public Tama (string name, int hunger, int sleep, int  happy)
+    public class Tama
     {
-      Name = name;
-      Hunger = hunger;
-      Sleep = sleep;
-      Happy = Happy;
-    }
+        public string Name { get; set; }
+        public int Hunger { get; set; }
+        public int Sleep { get; set; }
+        public int Happy { get; set; }
+        private static List<Tama> _team = new List<Tama> { };
 
-    public void PassTime()
-    {
-      this.Hunger -= 1;
-      this.Sleep -= 1;
-      this.Happy -= 1;
+        public Tama(string name, int hunger, int sleep, int happy)
+        {
+            Name = name;
+            Hunger = hunger;
+            Sleep = sleep;
+            Happy = Happy;
+            _team.Add(this);
+        }
+
+        public static List<Tama> GetAll()
+        {
+            return _team;
+        }
+
+        public void PassTime()
+        {
+            this.Hunger -= 1;
+            this.Sleep -= 1;
+            this.Happy -= 1;
+        }
+
+        public static void ClearAll()
+        {
+            _team.Clear();
+        }
     }
-  }
 }

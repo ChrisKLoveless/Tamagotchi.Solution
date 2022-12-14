@@ -6,8 +6,12 @@ using System;
 namespace Tamagotchi.Tests
 {
   [TestClass]
-  public class TamaTests
+  public class TamaTests : IDisposable
   {
+  public void Dispose()
+  {
+    Tama.ClearAll();
+  }
     [TestMethod]
     public void Constructor_CreatesInstance_Tamagotchi()
     {
@@ -32,11 +36,21 @@ namespace Tamagotchi.Tests
     }
 
     [TestMethod]
-    public void PassTime_SetHunder_Int()
+    public void PassTime_SetHunger_Int()
     {
       Tama tama = new Tama("cow", 1, 1, 1);
       tama.PassTime();
       Assert.AreEqual(0, tama.Hunger);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_TamaList()
+    {
+      List<Tama> newList = new List<Tama> { };
+
+      List<Tama> result = Tama.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
