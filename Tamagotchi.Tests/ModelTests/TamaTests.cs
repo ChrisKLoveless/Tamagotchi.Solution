@@ -11,8 +11,15 @@ namespace Tamagotchi.Tests
     [TestMethod]
     public void Constructor_CreatesInstance_Tamagotchi()
     {
-      Tama tama = new Tama();
+      Tama tama = new Tama("cow", 1, 1, 1);
     Assert.AreEqual(typeof(Tama), tama.GetType());
+    }
+
+    [TestMethod]
+    public void Constructor_ReturnName_String()
+    {
+      Tama tama = new Tama("cow", 1, 1, 1);
+      Assert.AreEqual("cow", tama.Name);
     }
   }
 }
